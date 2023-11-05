@@ -1,0 +1,2 @@
+# MultipleAttributeTextRewriting-logs
+train logs of MultipleAttributeTextRewriting
