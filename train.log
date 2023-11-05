@@ -1,0 +1,564 @@
+INFO - 11/06/23 02:07:47 - 0:00:00 - ============ Initialized logger ============
+INFO - 11/06/23 02:07:47 - 0:00:00 - adv_emb: False
+                                     attention: True
+                                     attributes: ['binary_sentiment']
+                                     balanced_train: True
+                                     batch_size: 32
+                                     beam_size: 0
+                                     bias_attr: avg
+                                     bleu_script_path: ../data/mosesdecoder/scripts/generic/multi-bleu.perl
+                                     bos_attr: avg
+                                     clip_grad_norm: 5
+                                     command: python main-parallel.py --exp_name 'test' --dump_path 'models/style_transfer' --mono_dataset '../data/dataset/yelp/processed/style_transfer/train.fader.with_cat.proc.40000.pth,../data/dataset/yelp/processed/style_transfer/valid.fader.with_cat.proc.40000.pth,../data/dataset/yelp/processed/style_transfer/test.fader.with_cat.proc.40000.pth' --attributes 'binary_sentiment' --epoch_size '10000' --max_epoch '10' --n_mono '-1' --lambda_ae '1.0' --lambda_bt '0.6' --train_ae 'true' --train_bt 'true' --eval_ftt_clf 'binary_sentiment:../data/dataset/yelp/processed/style_transfer/classifier_training/fasttext.binary_sentiment.40000.bin' --bleu_script_path '../data/mosesdecoder/scripts/generic/multi-bleu.perl' --balanced_train 'true' --exp_id "rpenory3r6"
+                                     dec_optimizer: enc_optimizer
+                                     dis_clip: 0
+                                     dis_dropout: 0
+                                     dis_hidden_dim: 128
+                                     dis_input_proj: False
+                                     dis_layers: 3
+                                     dis_optimizer: rmsprop,lr=0.0005
+                                     dis_smooth: 0
+                                     disc_anneal_iterations: 10
+                                     disc_lstm_dim: 128
+                                     disc_lstm_layers: 2
+                                     dropout: 0
+                                     dump_path: models/style_transfer/test/rpenory3r6
+                                     emb_dim: 256
+                                     enc_optimizer: adam,lr=0.0003
+                                     epoch_size: 10000
+                                     eval_cnn_clf: 
+                                     eval_ftt_clf: {'binary_sentiment': '../data/dataset/yelp/processed/style_transfer/classifier_training/fasttext.binary_sentiment.40000.bin'}
+                                     eval_lm: 
+                                     eval_only: False
+                                     eval_para: 
+                                     exp_id: rpenory3r6
+                                     exp_name: test
+                                     freeze_dec_emb: False
+                                     freeze_enc_emb: False
+                                     group_by_size: False
+                                     hidden_dim: 512
+                                     input_feeding: False
+                                     label_smoothing: 0
+                                     lambda_ae: 1.0
+                                     lambda_bt: 0.6
+                                     lambda_dis: 0
+                                     lambda_lm: 0
+                                     length_penalty: 1.0
+                                     lm_after: 0
+                                     lm_before: 0
+                                     lstm_proj: False
+                                     max_epoch: 10
+                                     max_len: 175
+                                     max_vocab: -1
+                                     metrics: 
+                                     mono_dataset: ['../data/dataset/yelp/processed/style_transfer/train.fader.with_cat.proc.40000.pth', '../data/dataset/yelp/processed/style_transfer/valid.fader.with_cat.proc.40000.pth', '../data/dataset/yelp/processed/style_transfer/test.fader.with_cat.proc.40000.pth']
+                                     n_dec_layers: 2
+                                     n_dis: 0
+                                     n_enc_layers: 2
+                                     n_eval_sentences: -1
+                                     n_mono: -1
+                                     name: test
+                                     otf_backprop_temperature: -1
+                                     otf_num_processes: 16
+                                     otf_sync_params_every: 1000
+                                     otf_temperature: 0.7
+                                     otf_update_dec: True
+                                     otf_update_enc: True
+                                     pool_latent: ('max', 5)
+                                     pretrained_emb: 
+                                     pretrained_out: False
+                                     reload_dec: False
+                                     reload_dis: False
+                                     reload_enc: False
+                                     reload_model: 
+                                     save_periodic: 
+                                     seed: -1
+                                     share_decpro_emb: False
+                                     share_encdec_emb: False
+                                     stop_crit: 
+                                     train_ae: True
+                                     train_bt: True
+                                     transformer: False
+                                     word_blank: 0.1
+                                     word_dropout: 0.1
+                                     word_shuffle: 3
+INFO - 11/06/23 02:07:47 - 0:00:00 - The experiment will be stored in models/style_transfer/test/rpenory3r6
+                                     
+INFO - 11/06/23 02:07:47 - 0:00:00 - Running command: python main-parallel.py --exp_name 'test' --dump_path 'models/style_transfer' --mono_dataset '../data/dataset/yelp/processed/style_transfer/train.fader.with_cat.proc.40000.pth,../data/dataset/yelp/processed/style_transfer/valid.fader.with_cat.proc.40000.pth,../data/dataset/yelp/processed/style_transfer/test.fader.with_cat.proc.40000.pth' --attributes 'binary_sentiment' --epoch_size '10000' --max_epoch '10' --n_mono '-1' --lambda_ae '1.0' --lambda_bt '0.6' --train_ae 'true' --train_bt 'true' --eval_ftt_clf 'binary_sentiment:../data/dataset/yelp/processed/style_transfer/classifier_training/fasttext.binary_sentiment.40000.bin' --bleu_script_path '../data/mosesdecoder/scripts/generic/multi-bleu.perl' --balanced_train 'true' --exp_id "rpenory3r6"
+INFO - 11/06/23 02:07:47 - 0:00:00 - ============ Monolingual data
+INFO - 11/06/23 02:07:47 - 0:00:00 - Loading data from ../data/dataset/yelp/processed/style_transfer/train.fader.with_cat.proc.40000.pth ...
+INFO - 11/06/23 02:08:02 - 0:00:15 - 469354598 words (42440 unique) in 4125228 sentences with 10 attributes. 0 unknown words (0 unique).
+INFO - 11/06/23 02:08:02 - 0:00:15 - Removed 0 empty sentences.
+INFO - 11/06/23 02:08:02 - 0:00:15 - Removed 751642 too long sentences.
+INFO - 11/06/23 02:08:02 - 0:00:15 - Loading data from ../data/dataset/yelp/processed/style_transfer/valid.fader.with_cat.proc.40000.pth ...
+INFO - 11/06/23 02:08:03 - 0:00:15 - 669059 words (42440 unique) in 5891 sentences with 10 attributes. 0 unknown words (0 unique).
+INFO - 11/06/23 02:08:03 - 0:00:15 - Removed 0 empty sentences.
+INFO - 11/06/23 02:08:03 - 0:00:15 - Removed 1054 too long sentences.
+INFO - 11/06/23 02:08:03 - 0:00:15 - Loading data from ../data/dataset/yelp/processed/style_transfer/test.fader.with_cat.proc.40000.pth ...
+INFO - 11/06/23 02:08:03 - 0:00:15 - 667951 words (42440 unique) in 5924 sentences with 10 attributes. 0 unknown words (0 unique).
+INFO - 11/06/23 02:08:03 - 0:00:16 - Removed 0 empty sentences.
+INFO - 11/06/23 02:08:03 - 0:00:16 - Removed 1091 too long sentences.
+
+INFO - 11/06/23 02:08:03 - 0:00:16 - ============ Data summary
+INFO - 11/06/23 02:08:03 - 0:00:16 - Monolingual data - train:   3373586
+INFO - 11/06/23 02:08:03 - 0:00:16 - 	binary_sentiment -         -1:  693014 (20.54%)
+INFO - 11/06/23 02:08:03 - 0:00:16 - 	binary_sentiment -          1: 2680572 (79.46%)
+INFO - 11/06/23 02:08:03 - 0:00:16 - Monolingual data - valid:      4837
+INFO - 11/06/23 02:08:03 - 0:00:16 - 	binary_sentiment -         -1:     988 (20.43%)
+INFO - 11/06/23 02:08:03 - 0:00:16 - 	binary_sentiment -          1:    3849 (79.57%)
+INFO - 11/06/23 02:08:03 - 0:00:16 - Monolingual data -  test:      4833
+INFO - 11/06/23 02:08:03 - 0:00:16 - 	binary_sentiment -         -1:     991 (20.50%)
+INFO - 11/06/23 02:08:03 - 0:00:16 - 	binary_sentiment -          1:    3842 (79.50%)
+
+INFO - 11/06/23 02:08:03 - 0:00:16 - ============ Building LSTM attention model - Encoder ...
+
+INFO - 11/06/23 02:08:03 - 0:00:16 - ============ Building LSTM attention model - Decoder ...
+
+INFO - 11/06/23 02:08:04 - 0:00:17 - ============ Model summary
+INFO - 11/06/23 02:08:04 - 0:00:17 - Number of enc+dec parameters: 57635928
+INFO - 11/06/23 02:08:04 - 0:00:17 - Encoder: Encoder(
+                                       (embeddings): Embedding(42440, 256, padding_idx=2)
+                                       (lstm): LSTM(256, 512, num_layers=2, bidirectional=True)
+                                       (proj): Linear(in_features=1024, out_features=256, bias=False)
+                                     )
+INFO - 11/06/23 02:08:04 - 0:00:17 - Decoder: Decoder(
+                                       (bos_attr_embeddings): Embedding(2, 256)
+                                       (bias_attr_embeddings): Embedding(2, 42440)
+                                       (embeddings): Embedding(42440, 256, padding_idx=2)
+                                       (lstm1): LSTM(256, 512)
+                                       (lstm2): LSTM(768, 512)
+                                       (att_proj): Linear(in_features=512, out_features=256, bias=True)
+                                       (proj): Linear(in_features=512, out_features=42440, bias=True)
+                                       (loss_fn): CrossEntropyLoss()
+                                     )
+INFO - 11/06/23 02:08:04 - 0:00:17 - Discriminator: None
+INFO - 11/06/23 02:08:04 - 0:00:17 - LM: None
+
+INFO - 11/06/23 02:08:04 - 0:00:17 - Starting subprocesses for OTF generation ...
+INFO - 11/06/23 02:08:07 - 0:00:19 - Test: Parameters are shared correctly.
+INFO - 11/06/23 02:08:14 - 0:00:26 - =================== Starting epoch 0 ... ===================
+INFO - 11/06/23 02:08:14 - 0:00:26 - Creating new training encdec,binary_sentiment,1 iterator ...
+INFO - 11/06/23 02:08:15 - 0:00:28 - Populating initial OTF generation cache ...
+INFO - 11/06/23 02:08:15 - 0:00:28 - Creating new training otf,binary_sentiment,1 iterator ...
+INFO - 11/06/23 02:08:16 - 0:00:29 - Creating new training otf,binary_sentiment,-1 iterator ...
+INFO - 11/06/23 02:10:32 - 0:02:45 - Creating new training encdec,binary_sentiment,-1 iterator ...
+INFO - 11/06/23 02:30:16 - 0:22:29 -      50 -    2.41 sent/s -   195.78 words/s - XE-AE:  7.1949 || XE-BT:  7.1463 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  450.79s (33.91%)
+INFO - 11/06/23 02:38:24 - 0:30:37 -     100 -    6.56 sent/s -   525.70 words/s - XE-AE:  6.6196 || XE-BT:  6.6624 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  428.13s (87.73%)
+INFO - 11/06/23 02:46:25 - 0:38:38 -     150 -    6.65 sent/s -   536.46 words/s - XE-AE:  6.5368 || XE-BT:  6.5565 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  421.69s (87.64%)
+INFO - 11/06/23 02:47:12 - 0:39:25 - ====================== End of epoch 0 ======================
+INFO - 11/06/23 02:47:12 - 0:39:25 - Evaluating sentences using pretrained classifiers (valid) ...
+INFO - 11/06/23 02:51:34 - 0:43:46 - BLEU - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 02:51:34 - 0:43:46 - BLEU - valid - binary_sentiment -         -1 ->       0.00 |       0.00 |       0.00
+INFO - 11/06/23 02:51:37 - 0:43:50 - BLEU - valid - binary_sentiment -          1 ->       0.00 |       0.00 |       0.00
+INFO - 11/06/23 02:51:37 - 0:43:50 - BLEU - valid - binary_sentiment: 0.000
+INFO - 11/06/23 02:51:37 - 0:43:50 - BLEU - valid: 0.000
+INFO - 11/06/23 02:51:37 - 0:43:50 - Accu - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 02:51:37 - 0:43:50 - Accu - valid - binary_sentiment -         -1 ->     100.00 |     100.00 |     100.00
+INFO - 11/06/23 02:51:37 - 0:43:50 - Accu - valid - binary_sentiment -          1 ->       0.00 |       0.00 |       0.00
+INFO - 11/06/23 02:51:37 - 0:43:50 - Accu - valid - binary_sentiment: 50.000
+INFO - 11/06/23 02:51:37 - 0:43:50 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 02:51:37 - 0:43:50 - [[[ 988    0]
+                                       [ 988    0]]
+                                     
+                                      [[3849    0]
+                                       [3849    0]]]
+INFO - 11/06/23 02:51:37 - 0:43:50 - Accu - valid: 50.000
+INFO - 11/06/23 02:51:37 - 0:43:50 - Evaluating sentences using pretrained classifiers (test) ...
+INFO - 11/06/23 02:54:30 - 0:46:43 - BLEU -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 02:54:30 - 0:46:43 - BLEU -  test - binary_sentiment -         -1 ->       0.02 |       0.02 |       0.02
+INFO - 11/06/23 02:54:34 - 0:46:46 - BLEU -  test - binary_sentiment -          1 ->       0.00 |       0.00 |       0.00
+INFO - 11/06/23 02:54:34 - 0:46:46 - BLEU -  test - binary_sentiment: 0.010
+INFO - 11/06/23 02:54:34 - 0:46:46 - BLEU -  test: 0.010
+INFO - 11/06/23 02:54:34 - 0:46:46 - Accu -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 02:54:34 - 0:46:46 - Accu -  test - binary_sentiment -         -1 ->     100.00 |     100.00 |     100.00
+INFO - 11/06/23 02:54:34 - 0:46:46 - Accu -  test - binary_sentiment -          1 ->       0.00 |       0.00 |       0.00
+INFO - 11/06/23 02:54:34 - 0:46:46 - Accu -  test - binary_sentiment: 50.000
+INFO - 11/06/23 02:54:34 - 0:46:46 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 02:54:34 - 0:46:46 - [[[ 991    0]
+                                       [ 991    0]]
+                                     
+                                      [[3842    0]
+                                       [3842    0]]]
+INFO - 11/06/23 02:54:34 - 0:46:46 - Accu -  test: 50.000
+INFO - 11/06/23 02:54:34 - 0:46:46 - __log__:{"epoch": 0, "self_bleu_valid_binary_sentiment_-1_-1": 0.0, "self_bleu_valid_binary_sentiment_-1_1": 0.0, "self_bleu_valid_binary_sentiment_-1": 0.0, "self_bleu_valid_binary_sentiment_1_-1": 0.0, "self_bleu_valid_binary_sentiment_1_1": 0.0, "self_bleu_valid_binary_sentiment_1": 0.0, "self_bleu_valid_binary_sentiment": 0.0, "self_bleu_valid": 0.0, "ftt_clf_valid_binary_sentiment_-1_-1": 100.0, "ftt_clf_valid_binary_sentiment_1_-1": 100.0, "ftt_clf_valid_binary_sentiment_-1": 100.0, "ftt_clf_valid_binary_sentiment_-1_1": 0.0, "ftt_clf_valid_binary_sentiment_1_1": 0.0, "ftt_clf_valid_binary_sentiment_1": 0.0, "ftt_clf_valid_binary_sentiment": 50.0, "ftt_clf_valid": 50.0, "self_bleu_test_binary_sentiment_-1_-1": 0.02, "self_bleu_test_binary_sentiment_-1_1": 0.02, "self_bleu_test_binary_sentiment_-1": 0.02, "self_bleu_test_binary_sentiment_1_-1": 0.0, "self_bleu_test_binary_sentiment_1_1": 0.0, "self_bleu_test_binary_sentiment_1": 0.0, "self_bleu_test_binary_sentiment": 0.01, "self_bleu_test": 0.01, "ftt_clf_test_binary_sentiment_-1_-1": 100.0, "ftt_clf_test_binary_sentiment_1_-1": 100.0, "ftt_clf_test_binary_sentiment_-1": 100.0, "ftt_clf_test_binary_sentiment_-1_1": 0.0, "ftt_clf_test_binary_sentiment_1_1": 0.0, "ftt_clf_test_binary_sentiment_1": 0.0, "ftt_clf_test_binary_sentiment": 50.0, "ftt_clf_test": 50.0}
+INFO - 11/06/23 02:54:34 - 0:46:46 - Saving checkpoint to models/style_transfer/test/rpenory3r6/checkpoint.pth ...
+INFO - 11/06/23 02:54:37 - 0:46:50 - Test: Parameters are shared correctly.
+INFO - 11/06/23 02:54:37 - 0:46:50 - =================== Starting epoch 1 ... ===================
+INFO - 11/06/23 02:59:53 - 0:52:06 -     200 -    3.96 sent/s -   320.18 words/s - XE-AE:  6.3994 || XE-BT:  6.4181 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  311.72s (38.55%)
+INFO - 11/06/23 03:07:38 - 0:59:51 -     250 -    6.88 sent/s -   557.54 words/s - XE-AE:  6.3993 || XE-BT:  6.3816 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  414.39s (89.14%)
+INFO - 11/06/23 03:15:32 - 1:07:45 -     300 -    6.76 sent/s -   545.98 words/s - XE-AE:  6.3189 || XE-BT:  6.3541 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  423.59s (89.43%)
+INFO - 11/06/23 03:18:00 - 1:10:13 - ====================== End of epoch 1 ======================
+INFO - 11/06/23 03:18:00 - 1:10:13 - Evaluating sentences using pretrained classifiers (valid) ...
+INFO - 11/06/23 03:23:11 - 1:15:24 - BLEU - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 03:23:11 - 1:15:24 - BLEU - valid - binary_sentiment -         -1 ->       0.00 |       0.00 |       0.00
+INFO - 11/06/23 03:23:15 - 1:15:27 - BLEU - valid - binary_sentiment -          1 ->       0.00 |       0.00 |       0.00
+INFO - 11/06/23 03:23:15 - 1:15:27 - BLEU - valid - binary_sentiment: 0.000
+INFO - 11/06/23 03:23:15 - 1:15:27 - BLEU - valid: 0.000
+INFO - 11/06/23 03:23:15 - 1:15:27 - Accu - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 03:23:15 - 1:15:27 - Accu - valid - binary_sentiment -         -1 ->       0.00 |       0.00 |       0.00
+INFO - 11/06/23 03:23:15 - 1:15:27 - Accu - valid - binary_sentiment -          1 ->       0.10 |       0.00 |       0.05
+INFO - 11/06/23 03:23:15 - 1:15:27 - Accu - valid - binary_sentiment: 0.025
+INFO - 11/06/23 03:23:15 - 1:15:27 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 03:23:15 - 1:15:27 - [[[   0  988]
+                                       [ 987    1]]
+                                     
+                                      [[   0 3849]
+                                       [3849    0]]]
+INFO - 11/06/23 03:23:15 - 1:15:27 - Accu - valid: 0.025
+INFO - 11/06/23 03:23:15 - 1:15:27 - Evaluating sentences using pretrained classifiers (test) ...
+INFO - 11/06/23 03:26:46 - 1:18:59 - BLEU -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 03:26:46 - 1:18:59 - BLEU -  test - binary_sentiment -         -1 ->       0.00 |       0.00 |       0.00
+INFO - 11/06/23 03:26:50 - 1:19:02 - BLEU -  test - binary_sentiment -          1 ->       0.00 |       0.00 |       0.00
+INFO - 11/06/23 03:26:50 - 1:19:02 - BLEU -  test - binary_sentiment: 0.000
+INFO - 11/06/23 03:26:50 - 1:19:02 - BLEU -  test: 0.000
+INFO - 11/06/23 03:26:50 - 1:19:02 - Accu -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 03:26:50 - 1:19:02 - Accu -  test - binary_sentiment -         -1 ->       0.00 |       0.00 |       0.00
+INFO - 11/06/23 03:26:50 - 1:19:02 - Accu -  test - binary_sentiment -          1 ->       0.00 |       0.00 |       0.00
+INFO - 11/06/23 03:26:50 - 1:19:02 - Accu -  test - binary_sentiment: 0.000
+INFO - 11/06/23 03:26:50 - 1:19:02 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 03:26:50 - 1:19:02 - [[[   0  991]
+                                       [ 991    0]]
+                                     
+                                      [[   0 3842]
+                                       [3842    0]]]
+INFO - 11/06/23 03:26:50 - 1:19:02 - Accu -  test: 0.000
+INFO - 11/06/23 03:26:50 - 1:19:02 - __log__:{"epoch": 1, "self_bleu_valid_binary_sentiment_-1_-1": 0.0, "self_bleu_valid_binary_sentiment_-1_1": 0.0, "self_bleu_valid_binary_sentiment_-1": 0.0, "self_bleu_valid_binary_sentiment_1_-1": 0.0, "self_bleu_valid_binary_sentiment_1_1": 0.0, "self_bleu_valid_binary_sentiment_1": 0.0, "self_bleu_valid_binary_sentiment": 0.0, "self_bleu_valid": 0.0, "ftt_clf_valid_binary_sentiment_-1_-1": 0.0, "ftt_clf_valid_binary_sentiment_1_-1": 0.0, "ftt_clf_valid_binary_sentiment_-1": 0.0, "ftt_clf_valid_binary_sentiment_-1_1": 0.10121457489878542, "ftt_clf_valid_binary_sentiment_1_1": 0.0, "ftt_clf_valid_binary_sentiment_1": 0.05060728744939271, "ftt_clf_valid_binary_sentiment": 0.025303643724696356, "ftt_clf_valid": 0.025303643724696356, "self_bleu_test_binary_sentiment_-1_-1": 0.0, "self_bleu_test_binary_sentiment_-1_1": 0.0, "self_bleu_test_binary_sentiment_-1": 0.0, "self_bleu_test_binary_sentiment_1_-1": 0.0, "self_bleu_test_binary_sentiment_1_1": 0.0, "self_bleu_test_binary_sentiment_1": 0.0, "self_bleu_test_binary_sentiment": 0.0, "self_bleu_test": 0.0, "ftt_clf_test_binary_sentiment_-1_-1": 0.0, "ftt_clf_test_binary_sentiment_1_-1": 0.0, "ftt_clf_test_binary_sentiment_-1": 0.0, "ftt_clf_test_binary_sentiment_-1_1": 0.0, "ftt_clf_test_binary_sentiment_1_1": 0.0, "ftt_clf_test_binary_sentiment_1": 0.0, "ftt_clf_test_binary_sentiment": 0.0, "ftt_clf_test": 0.0}
+INFO - 11/06/23 03:26:50 - 1:19:02 - Saving checkpoint to models/style_transfer/test/rpenory3r6/checkpoint.pth ...
+INFO - 11/06/23 03:26:52 - 1:19:05 - Test: Parameters are shared correctly.
+INFO - 11/06/23 03:26:52 - 1:19:05 - =================== Starting epoch 2 ... ===================
+INFO - 11/06/23 03:31:49 - 1:24:01 -     350 -    3.28 sent/s -   256.73 words/s - XE-AE:  6.2106 || XE-BT:  6.1995 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  397.39s (40.69%)
+INFO - 11/06/23 03:39:32 - 1:31:45 -     400 -    6.90 sent/s -   554.22 words/s - XE-AE:  6.1171 || XE-BT:  6.0948 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  411.74s (88.76%)
+INFO - 11/06/23 03:47:22 - 1:39:35 -     450 -    6.81 sent/s -   555.07 words/s - XE-AE:  6.0379 || XE-BT:  6.0202 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  411.52s (87.60%)
+INFO - 11/06/23 03:50:27 - 1:42:40 - ====================== End of epoch 2 ======================
+INFO - 11/06/23 03:50:27 - 1:42:40 - Evaluating sentences using pretrained classifiers (valid) ...
+INFO - 11/06/23 03:53:12 - 1:45:25 - BLEU - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 03:53:12 - 1:45:25 - BLEU - valid - binary_sentiment -         -1 ->       0.34 |       0.51 |       0.43
+INFO - 11/06/23 03:53:14 - 1:45:27 - BLEU - valid - binary_sentiment -          1 ->       0.28 |       0.53 |       0.41
+INFO - 11/06/23 03:53:14 - 1:45:27 - BLEU - valid - binary_sentiment: 0.415
+INFO - 11/06/23 03:53:14 - 1:45:27 - BLEU - valid: 0.415
+INFO - 11/06/23 03:53:14 - 1:45:27 - Accu - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 03:53:14 - 1:45:27 - Accu - valid - binary_sentiment -         -1 ->     100.00 |     100.00 |     100.00
+INFO - 11/06/23 03:53:14 - 1:45:27 - Accu - valid - binary_sentiment -          1 ->       0.20 |       0.23 |       0.22
+INFO - 11/06/23 03:53:14 - 1:45:27 - Accu - valid - binary_sentiment: 50.109
+INFO - 11/06/23 03:53:14 - 1:45:27 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 03:53:14 - 1:45:27 - [[[ 988    0]
+                                       [ 986    2]]
+                                     
+                                      [[3849    0]
+                                       [3840    9]]]
+INFO - 11/06/23 03:53:14 - 1:45:27 - Accu - valid: 50.109
+INFO - 11/06/23 03:53:14 - 1:45:27 - Evaluating sentences using pretrained classifiers (test) ...
+INFO - 11/06/23 03:54:37 - 1:46:50 - BLEU -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 03:54:37 - 1:46:50 - BLEU -  test - binary_sentiment -         -1 ->       0.31 |       0.45 |       0.38
+INFO - 11/06/23 03:54:39 - 1:46:52 - BLEU -  test - binary_sentiment -          1 ->       0.25 |       0.54 |       0.40
+INFO - 11/06/23 03:54:39 - 1:46:52 - BLEU -  test - binary_sentiment: 0.388
+INFO - 11/06/23 03:54:39 - 1:46:52 - BLEU -  test: 0.388
+INFO - 11/06/23 03:54:39 - 1:46:52 - Accu -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 03:54:39 - 1:46:52 - Accu -  test - binary_sentiment -         -1 ->     100.00 |     100.00 |     100.00
+INFO - 11/06/23 03:54:39 - 1:46:52 - Accu -  test - binary_sentiment -          1 ->       0.00 |       0.26 |       0.13
+INFO - 11/06/23 03:54:39 - 1:46:52 - Accu -  test - binary_sentiment: 50.065
+INFO - 11/06/23 03:54:39 - 1:46:52 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 03:54:39 - 1:46:52 - [[[ 991    0]
+                                       [ 991    0]]
+                                     
+                                      [[3842    0]
+                                       [3832   10]]]
+INFO - 11/06/23 03:54:39 - 1:46:52 - Accu -  test: 50.065
+INFO - 11/06/23 03:54:39 - 1:46:52 - __log__:{"epoch": 2, "self_bleu_valid_binary_sentiment_-1_-1": 0.34, "self_bleu_valid_binary_sentiment_-1_1": 0.51, "self_bleu_valid_binary_sentiment_-1": 0.42500000000000004, "self_bleu_valid_binary_sentiment_1_-1": 0.28, "self_bleu_valid_binary_sentiment_1_1": 0.53, "self_bleu_valid_binary_sentiment_1": 0.405, "self_bleu_valid_binary_sentiment": 0.41500000000000004, "self_bleu_valid": 0.41500000000000004, "ftt_clf_valid_binary_sentiment_-1_-1": 100.0, "ftt_clf_valid_binary_sentiment_1_-1": 100.0, "ftt_clf_valid_binary_sentiment_-1": 100.0, "ftt_clf_valid_binary_sentiment_-1_1": 0.20242914979757085, "ftt_clf_valid_binary_sentiment_1_1": 0.2338269680436477, "ftt_clf_valid_binary_sentiment_1": 0.21812805892060927, "ftt_clf_valid_binary_sentiment": 50.109064029460306, "ftt_clf_valid": 50.109064029460306, "self_bleu_test_binary_sentiment_-1_-1": 0.31, "self_bleu_test_binary_sentiment_-1_1": 0.45, "self_bleu_test_binary_sentiment_-1": 0.38, "self_bleu_test_binary_sentiment_1_-1": 0.25, "self_bleu_test_binary_sentiment_1_1": 0.54, "self_bleu_test_binary_sentiment_1": 0.395, "self_bleu_test_binary_sentiment": 0.3875, "self_bleu_test": 0.3875, "ftt_clf_test_binary_sentiment_-1_-1": 100.0, "ftt_clf_test_binary_sentiment_1_-1": 100.0, "ftt_clf_test_binary_sentiment_-1": 100.0, "ftt_clf_test_binary_sentiment_-1_1": 0.0, "ftt_clf_test_binary_sentiment_1_1": 0.2602811035918792, "ftt_clf_test_binary_sentiment_1": 0.1301405517959396, "ftt_clf_test_binary_sentiment": 50.06507027589797, "ftt_clf_test": 50.06507027589797}
+INFO - 11/06/23 03:54:39 - 1:46:52 - Saving checkpoint to models/style_transfer/test/rpenory3r6/checkpoint.pth ...
+INFO - 11/06/23 03:54:44 - 1:46:57 - Test: Parameters are shared correctly.
+INFO - 11/06/23 03:54:44 - 1:46:57 - =================== Starting epoch 3 ... ===================
+INFO - 11/06/23 03:57:21 - 1:49:34 -     500 -    5.35 sent/s -   426.70 words/s - XE-AE:  5.9313 || XE-BT:  5.9224 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  293.52s (49.04%)
+INFO - 11/06/23 04:05:08 - 1:57:21 -     550 -    6.85 sent/s -   553.26 words/s - XE-AE:  5.8299 || XE-BT:  5.8330 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  419.05s (89.69%)
+INFO - 11/06/23 04:14:22 - 2:06:34 -     600 -    5.78 sent/s -   460.89 words/s - XE-AE:  5.7217 || XE-BT:  5.7325 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  497.31s (89.83%)
+INFO - 11/06/23 04:17:55 - 2:10:08 - ====================== End of epoch 3 ======================
+INFO - 11/06/23 04:17:55 - 2:10:08 - Evaluating sentences using pretrained classifiers (valid) ...
+INFO - 11/06/23 04:21:06 - 2:13:19 - BLEU - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 04:21:06 - 2:13:19 - BLEU - valid - binary_sentiment -         -1 ->       0.19 |       0.22 |       0.21
+INFO - 11/06/23 04:21:09 - 2:13:22 - BLEU - valid - binary_sentiment -          1 ->       0.21 |       0.29 |       0.25
+INFO - 11/06/23 04:21:09 - 2:13:22 - BLEU - valid - binary_sentiment: 0.228
+INFO - 11/06/23 04:21:09 - 2:13:22 - BLEU - valid: 0.228
+INFO - 11/06/23 04:21:09 - 2:13:22 - Accu - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 04:21:09 - 2:13:22 - Accu - valid - binary_sentiment -         -1 ->      18.72 |      31.88 |      25.30
+INFO - 11/06/23 04:21:09 - 2:13:22 - Accu - valid - binary_sentiment -          1 ->       0.10 |       0.03 |       0.06
+INFO - 11/06/23 04:21:09 - 2:13:22 - Accu - valid - binary_sentiment: 12.683
+INFO - 11/06/23 04:21:09 - 2:13:22 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 04:21:09 - 2:13:22 - [[[ 185  803]
+                                       [ 987    1]]
+                                     
+                                      [[1227 2622]
+                                       [3848    1]]]
+INFO - 11/06/23 04:21:09 - 2:13:22 - Accu - valid: 12.683
+INFO - 11/06/23 04:21:09 - 2:13:22 - Evaluating sentences using pretrained classifiers (test) ...
+INFO - 11/06/23 04:22:49 - 2:15:02 - BLEU -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 04:22:49 - 2:15:02 - BLEU -  test - binary_sentiment -         -1 ->       0.00 |       0.18 |       0.09
+INFO - 11/06/23 04:22:51 - 2:15:04 - BLEU -  test - binary_sentiment -          1 ->       0.19 |       0.26 |       0.23
+INFO - 11/06/23 04:22:51 - 2:15:04 - BLEU -  test - binary_sentiment: 0.158
+INFO - 11/06/23 04:22:51 - 2:15:04 - BLEU -  test: 0.158
+INFO - 11/06/23 04:22:51 - 2:15:04 - Accu -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 04:22:51 - 2:15:04 - Accu -  test - binary_sentiment -         -1 ->      22.00 |      31.60 |      26.80
+INFO - 11/06/23 04:22:51 - 2:15:04 - Accu -  test - binary_sentiment -          1 ->       0.10 |       0.13 |       0.12
+INFO - 11/06/23 04:22:51 - 2:15:04 - Accu -  test - binary_sentiment: 13.457
+INFO - 11/06/23 04:22:51 - 2:15:04 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 04:22:51 - 2:15:04 - [[[ 218  773]
+                                       [ 990    1]]
+                                     
+                                      [[1214 2628]
+                                       [3837    5]]]
+INFO - 11/06/23 04:22:51 - 2:15:04 - Accu -  test: 13.457
+INFO - 11/06/23 04:22:51 - 2:15:04 - __log__:{"epoch": 3, "self_bleu_valid_binary_sentiment_-1_-1": 0.19, "self_bleu_valid_binary_sentiment_-1_1": 0.22, "self_bleu_valid_binary_sentiment_-1": 0.20500000000000002, "self_bleu_valid_binary_sentiment_1_-1": 0.21, "self_bleu_valid_binary_sentiment_1_1": 0.29, "self_bleu_valid_binary_sentiment_1": 0.25, "self_bleu_valid_binary_sentiment": 0.2275, "self_bleu_valid": 0.2275, "ftt_clf_valid_binary_sentiment_-1_-1": 18.724696356275302, "ftt_clf_valid_binary_sentiment_1_-1": 31.878409976617302, "ftt_clf_valid_binary_sentiment_-1": 25.301553166446304, "ftt_clf_valid_binary_sentiment_-1_1": 0.10121457489878542, "ftt_clf_valid_binary_sentiment_1_1": 0.025980774227071967, "ftt_clf_valid_binary_sentiment_1": 0.0635976745629287, "ftt_clf_valid_binary_sentiment": 12.682575420504616, "ftt_clf_valid": 12.682575420504616, "self_bleu_test_binary_sentiment_-1_-1": 0.0, "self_bleu_test_binary_sentiment_-1_1": 0.18, "self_bleu_test_binary_sentiment_-1": 0.09, "self_bleu_test_binary_sentiment_1_-1": 0.19, "self_bleu_test_binary_sentiment_1_1": 0.26, "self_bleu_test_binary_sentiment_1": 0.225, "self_bleu_test_binary_sentiment": 0.1575, "self_bleu_test": 0.1575, "ftt_clf_test_binary_sentiment_-1_-1": 21.99798183652876, "ftt_clf_test_binary_sentiment_1_-1": 31.59812597605414, "ftt_clf_test_binary_sentiment_-1": 26.79805390629145, "ftt_clf_test_binary_sentiment_-1_1": 0.10090817356205853, "ftt_clf_test_binary_sentiment_1_1": 0.1301405517959396, "ftt_clf_test_binary_sentiment_1": 0.11552436267899907, "ftt_clf_test_binary_sentiment": 13.456789134485225, "ftt_clf_test": 13.456789134485225}
+INFO - 11/06/23 04:22:51 - 2:15:04 - Saving checkpoint to models/style_transfer/test/rpenory3r6/checkpoint.pth ...
+INFO - 11/06/23 04:23:00 - 2:15:13 - Test: Parameters are shared correctly.
+INFO - 11/06/23 04:23:00 - 2:15:13 - =================== Starting epoch 4 ... ===================
+INFO - 11/06/23 04:25:36 - 2:17:49 -     650 -    4.74 sent/s -   374.76 words/s - XE-AE:  5.6297 || XE-BT:  5.6546 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  318.58s (47.23%)
+INFO - 11/06/23 04:33:21 - 2:25:34 -     700 -    6.88 sent/s -   552.86 words/s - XE-AE:  5.5738 || XE-BT:  5.5697 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  418.13s (89.95%)
+INFO - 11/06/23 04:41:00 - 2:33:12 -     750 -    6.98 sent/s -   551.92 words/s - XE-AE:  5.5013 || XE-BT:  5.5122 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  406.32s (88.60%)
+INFO - 11/06/23 04:46:26 - 2:38:39 - ====================== End of epoch 4 ======================
+INFO - 11/06/23 04:46:26 - 2:38:39 - Evaluating sentences using pretrained classifiers (valid) ...
+INFO - 11/06/23 04:51:22 - 2:43:35 - BLEU - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 04:51:22 - 2:43:35 - BLEU - valid - binary_sentiment -         -1 ->       0.34 |       0.51 |       0.43
+INFO - 11/06/23 04:51:26 - 2:43:39 - BLEU - valid - binary_sentiment -          1 ->       0.32 |       0.52 |       0.42
+INFO - 11/06/23 04:51:26 - 2:43:39 - BLEU - valid - binary_sentiment: 0.423
+INFO - 11/06/23 04:51:26 - 2:43:39 - BLEU - valid: 0.423
+INFO - 11/06/23 04:51:26 - 2:43:39 - Accu - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 04:51:26 - 2:43:39 - Accu - valid - binary_sentiment -         -1 ->     100.00 |     100.00 |     100.00
+INFO - 11/06/23 04:51:26 - 2:43:39 - Accu - valid - binary_sentiment -          1 ->       0.10 |       0.18 |       0.14
+INFO - 11/06/23 04:51:26 - 2:43:39 - Accu - valid - binary_sentiment: 50.071
+INFO - 11/06/23 04:51:26 - 2:43:39 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 04:51:26 - 2:43:39 - [[[ 988    0]
+                                       [ 987    1]]
+                                     
+                                      [[3849    0]
+                                       [3842    7]]]
+INFO - 11/06/23 04:51:26 - 2:43:39 - Accu - valid: 50.071
+INFO - 11/06/23 04:51:26 - 2:43:39 - Evaluating sentences using pretrained classifiers (test) ...
+INFO - 11/06/23 04:54:45 - 2:46:58 - BLEU -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 04:54:45 - 2:46:58 - BLEU -  test - binary_sentiment -         -1 ->       0.34 |       0.44 |       0.39
+INFO - 11/06/23 04:54:48 - 2:47:01 - BLEU -  test - binary_sentiment -          1 ->       0.36 |       0.52 |       0.44
+INFO - 11/06/23 04:54:48 - 2:47:01 - BLEU -  test - binary_sentiment: 0.415
+INFO - 11/06/23 04:54:48 - 2:47:01 - BLEU -  test: 0.415
+INFO - 11/06/23 04:54:48 - 2:47:01 - Accu -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 04:54:48 - 2:47:01 - Accu -  test - binary_sentiment -         -1 ->     100.00 |     100.00 |     100.00
+INFO - 11/06/23 04:54:48 - 2:47:01 - Accu -  test - binary_sentiment -          1 ->       0.00 |       0.05 |       0.03
+INFO - 11/06/23 04:54:48 - 2:47:01 - Accu -  test - binary_sentiment: 50.013
+INFO - 11/06/23 04:54:48 - 2:47:01 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 04:54:48 - 2:47:01 - [[[ 991    0]
+                                       [ 991    0]]
+                                     
+                                      [[3842    0]
+                                       [3840    2]]]
+INFO - 11/06/23 04:54:48 - 2:47:01 - Accu -  test: 50.013
+INFO - 11/06/23 04:54:48 - 2:47:01 - __log__:{"epoch": 4, "self_bleu_valid_binary_sentiment_-1_-1": 0.34, "self_bleu_valid_binary_sentiment_-1_1": 0.51, "self_bleu_valid_binary_sentiment_-1": 0.42500000000000004, "self_bleu_valid_binary_sentiment_1_-1": 0.32, "self_bleu_valid_binary_sentiment_1_1": 0.52, "self_bleu_valid_binary_sentiment_1": 0.42000000000000004, "self_bleu_valid_binary_sentiment": 0.42250000000000004, "self_bleu_valid": 0.42250000000000004, "ftt_clf_valid_binary_sentiment_-1_-1": 100.0, "ftt_clf_valid_binary_sentiment_1_-1": 100.0, "ftt_clf_valid_binary_sentiment_-1": 100.0, "ftt_clf_valid_binary_sentiment_-1_1": 0.10121457489878542, "ftt_clf_valid_binary_sentiment_1_1": 0.18186541958950378, "ftt_clf_valid_binary_sentiment_1": 0.1415399972441446, "ftt_clf_valid_binary_sentiment": 50.07076999862207, "ftt_clf_valid": 50.07076999862207, "self_bleu_test_binary_sentiment_-1_-1": 0.34, "self_bleu_test_binary_sentiment_-1_1": 0.44, "self_bleu_test_binary_sentiment_-1": 0.39, "self_bleu_test_binary_sentiment_1_-1": 0.36, "self_bleu_test_binary_sentiment_1_1": 0.52, "self_bleu_test_binary_sentiment_1": 0.44, "self_bleu_test_binary_sentiment": 0.41500000000000004, "self_bleu_test": 0.41500000000000004, "ftt_clf_test_binary_sentiment_-1_-1": 100.0, "ftt_clf_test_binary_sentiment_1_-1": 100.0, "ftt_clf_test_binary_sentiment_-1": 100.0, "ftt_clf_test_binary_sentiment_-1_1": 0.0, "ftt_clf_test_binary_sentiment_1_1": 0.052056220718375845, "ftt_clf_test_binary_sentiment_1": 0.026028110359187923, "ftt_clf_test_binary_sentiment": 50.013014055179596, "ftt_clf_test": 50.013014055179596}
+INFO - 11/06/23 04:54:48 - 2:47:01 - Saving checkpoint to models/style_transfer/test/rpenory3r6/checkpoint.pth ...
+INFO - 11/06/23 04:54:52 - 2:47:05 - Test: Parameters are shared correctly.
+INFO - 11/06/23 04:54:52 - 2:47:05 - =================== Starting epoch 5 ... ===================
+INFO - 11/06/23 04:55:06 - 2:47:19 -     800 -    3.78 sent/s -   307.44 words/s - XE-AE:  5.4680 || XE-BT:  5.4556 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  290.83s (34.36%)
+INFO - 11/06/23 05:04:35 - 2:56:48 -     850 -    5.62 sent/s -   448.77 words/s - XE-AE:  5.3967 || XE-BT:  5.3886 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  521.65s (91.62%)
+INFO - 11/06/23 05:12:39 - 3:04:52 -     900 -    6.62 sent/s -   541.26 words/s - XE-AE:  5.3700 || XE-BT:  5.3556 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  432.88s (89.52%)
+INFO - 11/06/23 05:18:09 - 3:10:22 - ====================== End of epoch 5 ======================
+INFO - 11/06/23 05:18:09 - 3:10:22 - Evaluating sentences using pretrained classifiers (valid) ...
+INFO - 11/06/23 05:21:14 - 3:13:27 - BLEU - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 05:21:14 - 3:13:27 - BLEU - valid - binary_sentiment -         -1 ->       0.43 |       0.55 |       0.49
+INFO - 11/06/23 05:21:17 - 3:13:30 - BLEU - valid - binary_sentiment -          1 ->       0.45 |       0.91 |       0.68
+INFO - 11/06/23 05:21:17 - 3:13:30 - BLEU - valid - binary_sentiment: 0.585
+INFO - 11/06/23 05:21:17 - 3:13:30 - BLEU - valid: 0.585
+INFO - 11/06/23 05:21:17 - 3:13:30 - Accu - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 05:21:17 - 3:13:30 - Accu - valid - binary_sentiment -         -1 ->       0.00 |       0.26 |       0.13
+INFO - 11/06/23 05:21:17 - 3:13:30 - Accu - valid - binary_sentiment -          1 ->     100.00 |     100.00 |     100.00
+INFO - 11/06/23 05:21:17 - 3:13:30 - Accu - valid - binary_sentiment: 50.065
+INFO - 11/06/23 05:21:17 - 3:13:30 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 05:21:17 - 3:13:30 - [[[   0  988]
+                                       [   0  988]]
+                                     
+                                      [[  10 3839]
+                                       [   0 3849]]]
+INFO - 11/06/23 05:21:17 - 3:13:30 - Accu - valid: 50.065
+INFO - 11/06/23 05:21:17 - 3:13:30 - Evaluating sentences using pretrained classifiers (test) ...
+INFO - 11/06/23 05:22:43 - 3:14:56 - BLEU -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 05:22:43 - 3:14:56 - BLEU -  test - binary_sentiment -         -1 ->       0.43 |       0.51 |       0.47
+INFO - 11/06/23 05:22:46 - 3:14:59 - BLEU -  test - binary_sentiment -          1 ->       0.43 |       0.95 |       0.69
+INFO - 11/06/23 05:22:46 - 3:14:59 - BLEU -  test - binary_sentiment: 0.580
+INFO - 11/06/23 05:22:46 - 3:14:59 - BLEU -  test: 0.580
+INFO - 11/06/23 05:22:46 - 3:14:59 - Accu -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 05:22:46 - 3:14:59 - Accu -  test - binary_sentiment -         -1 ->       0.00 |       0.29 |       0.14
+INFO - 11/06/23 05:22:46 - 3:14:59 - Accu -  test - binary_sentiment -          1 ->     100.00 |     100.00 |     100.00
+INFO - 11/06/23 05:22:46 - 3:14:59 - Accu -  test - binary_sentiment: 50.072
+INFO - 11/06/23 05:22:46 - 3:14:59 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 05:22:46 - 3:14:59 - [[[   0  991]
+                                       [   0  991]]
+                                     
+                                      [[  11 3831]
+                                       [   0 3842]]]
+INFO - 11/06/23 05:22:46 - 3:14:59 - Accu -  test: 50.072
+INFO - 11/06/23 05:22:46 - 3:14:59 - __log__:{"epoch": 5, "self_bleu_valid_binary_sentiment_-1_-1": 0.43, "self_bleu_valid_binary_sentiment_-1_1": 0.55, "self_bleu_valid_binary_sentiment_-1": 0.49, "self_bleu_valid_binary_sentiment_1_-1": 0.45, "self_bleu_valid_binary_sentiment_1_1": 0.91, "self_bleu_valid_binary_sentiment_1": 0.68, "self_bleu_valid_binary_sentiment": 0.585, "self_bleu_valid": 0.585, "ftt_clf_valid_binary_sentiment_-1_-1": 0.0, "ftt_clf_valid_binary_sentiment_1_-1": 0.2598077422707197, "ftt_clf_valid_binary_sentiment_-1": 0.12990387113535984, "ftt_clf_valid_binary_sentiment_-1_1": 100.0, "ftt_clf_valid_binary_sentiment_1_1": 100.0, "ftt_clf_valid_binary_sentiment_1": 100.0, "ftt_clf_valid_binary_sentiment": 50.06495193556768, "ftt_clf_valid": 50.06495193556768, "self_bleu_test_binary_sentiment_-1_-1": 0.43, "self_bleu_test_binary_sentiment_-1_1": 0.51, "self_bleu_test_binary_sentiment_-1": 0.47, "self_bleu_test_binary_sentiment_1_-1": 0.43, "self_bleu_test_binary_sentiment_1_1": 0.95, "self_bleu_test_binary_sentiment_1": 0.69, "self_bleu_test_binary_sentiment": 0.58, "self_bleu_test": 0.58, "ftt_clf_test_binary_sentiment_-1_-1": 0.0, "ftt_clf_test_binary_sentiment_1_-1": 0.2863092139510672, "ftt_clf_test_binary_sentiment_-1": 0.1431546069755336, "ftt_clf_test_binary_sentiment_-1_1": 100.0, "ftt_clf_test_binary_sentiment_1_1": 100.0, "ftt_clf_test_binary_sentiment_1": 100.0, "ftt_clf_test_binary_sentiment": 50.071577303487764, "ftt_clf_test": 50.071577303487764}
+INFO - 11/06/23 05:22:46 - 3:14:59 - Saving checkpoint to models/style_transfer/test/rpenory3r6/checkpoint.pth ...
+INFO - 11/06/23 05:22:50 - 3:15:03 - Test: Parameters are shared correctly.
+INFO - 11/06/23 05:22:50 - 3:15:03 - =================== Starting epoch 6 ... ===================
+INFO - 11/06/23 05:22:56 - 3:15:08 -     950 -    5.19 sent/s -   415.74 words/s - XE-AE:  5.3191 || XE-BT:  5.2901 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  286.50s (46.45%)
+INFO - 11/06/23 05:30:26 - 3:22:39 -    1000 -    7.11 sent/s -   570.79 words/s - XE-AE:  5.2669 || XE-BT:  5.2765 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  399.24s (88.66%)
+INFO - 11/06/23 05:36:28 - 3:28:40 -    1050 -    8.85 sent/s -   709.08 words/s - XE-AE:  5.2172 || XE-BT:  5.2668 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  303.93s (84.01%)
+INFO - 11/06/23 05:42:14 - 3:34:27 - ====================== End of epoch 6 ======================
+INFO - 11/06/23 05:42:14 - 3:34:27 - Evaluating sentences using pretrained classifiers (valid) ...
+INFO - 11/06/23 05:45:59 - 3:38:12 - BLEU - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 05:45:59 - 3:38:12 - BLEU - valid - binary_sentiment -         -1 ->       0.70 |       0.60 |       0.65
+INFO - 11/06/23 05:46:02 - 3:38:15 - BLEU - valid - binary_sentiment -          1 ->       0.68 |       0.79 |       0.74
+INFO - 11/06/23 05:46:02 - 3:38:15 - BLEU - valid - binary_sentiment: 0.693
+INFO - 11/06/23 05:46:02 - 3:38:15 - BLEU - valid: 0.693
+INFO - 11/06/23 05:46:02 - 3:38:15 - Accu - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 05:46:02 - 3:38:15 - Accu - valid - binary_sentiment -         -1 ->       9.01 |       7.79 |       8.40
+INFO - 11/06/23 05:46:02 - 3:38:15 - Accu - valid - binary_sentiment -          1 ->     100.00 |     100.00 |     100.00
+INFO - 11/06/23 05:46:02 - 3:38:15 - Accu - valid - binary_sentiment: 54.201
+INFO - 11/06/23 05:46:02 - 3:38:15 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 05:46:02 - 3:38:15 - [[[  89  899]
+                                       [   0  988]]
+                                     
+                                      [[ 300 3549]
+                                       [   0 3849]]]
+INFO - 11/06/23 05:46:02 - 3:38:15 - Accu - valid: 54.201
+INFO - 11/06/23 05:46:02 - 3:38:15 - Evaluating sentences using pretrained classifiers (test) ...
+INFO - 11/06/23 05:49:01 - 3:41:14 - BLEU -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 05:49:01 - 3:41:14 - BLEU -  test - binary_sentiment -         -1 ->       0.62 |       0.49 |       0.55
+INFO - 11/06/23 05:49:05 - 3:41:18 - BLEU -  test - binary_sentiment -          1 ->       0.73 |       0.78 |       0.76
+INFO - 11/06/23 05:49:05 - 3:41:18 - BLEU -  test - binary_sentiment: 0.655
+INFO - 11/06/23 05:49:05 - 3:41:18 - BLEU -  test: 0.655
+INFO - 11/06/23 05:49:05 - 3:41:18 - Accu -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 05:49:05 - 3:41:18 - Accu -  test - binary_sentiment -         -1 ->       8.88 |       7.29 |       8.08
+INFO - 11/06/23 05:49:05 - 3:41:18 - Accu -  test - binary_sentiment -          1 ->     100.00 |     100.00 |     100.00
+INFO - 11/06/23 05:49:05 - 3:41:18 - Accu -  test - binary_sentiment: 54.042
+INFO - 11/06/23 05:49:05 - 3:41:18 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 05:49:05 - 3:41:18 - [[[  88  903]
+                                       [   0  991]]
+                                     
+                                      [[ 280 3562]
+                                       [   0 3842]]]
+INFO - 11/06/23 05:49:05 - 3:41:18 - Accu -  test: 54.042
+INFO - 11/06/23 05:49:05 - 3:41:18 - __log__:{"epoch": 6, "self_bleu_valid_binary_sentiment_-1_-1": 0.7, "self_bleu_valid_binary_sentiment_-1_1": 0.6, "self_bleu_valid_binary_sentiment_-1": 0.6499999999999999, "self_bleu_valid_binary_sentiment_1_-1": 0.68, "self_bleu_valid_binary_sentiment_1_1": 0.79, "self_bleu_valid_binary_sentiment_1": 0.7350000000000001, "self_bleu_valid_binary_sentiment": 0.6925, "self_bleu_valid": 0.6925, "ftt_clf_valid_binary_sentiment_-1_-1": 9.008097165991902, "ftt_clf_valid_binary_sentiment_1_-1": 7.79423226812159, "ftt_clf_valid_binary_sentiment_-1": 8.401164717056746, "ftt_clf_valid_binary_sentiment_-1_1": 100.0, "ftt_clf_valid_binary_sentiment_1_1": 100.0, "ftt_clf_valid_binary_sentiment_1": 100.0, "ftt_clf_valid_binary_sentiment": 54.20058235852837, "ftt_clf_valid": 54.20058235852837, "self_bleu_test_binary_sentiment_-1_-1": 0.62, "self_bleu_test_binary_sentiment_-1_1": 0.49, "self_bleu_test_binary_sentiment_-1": 0.5549999999999999, "self_bleu_test_binary_sentiment_1_-1": 0.73, "self_bleu_test_binary_sentiment_1_1": 0.78, "self_bleu_test_binary_sentiment_1": 0.755, "self_bleu_test_binary_sentiment": 0.655, "self_bleu_test": 0.655, "ftt_clf_test_binary_sentiment_-1_-1": 8.87991927346115, "ftt_clf_test_binary_sentiment_1_-1": 7.287870900572618, "ftt_clf_test_binary_sentiment_-1": 8.083895087016884, "ftt_clf_test_binary_sentiment_-1_1": 100.0, "ftt_clf_test_binary_sentiment_1_1": 100.0, "ftt_clf_test_binary_sentiment_1": 100.0, "ftt_clf_test_binary_sentiment": 54.04194754350844, "ftt_clf_test": 54.04194754350844}
+INFO - 11/06/23 05:49:05 - 3:41:18 - Saving checkpoint to models/style_transfer/test/rpenory3r6/checkpoint.pth ...
+INFO - 11/06/23 05:49:09 - 3:41:21 - Test: Parameters are shared correctly.
+INFO - 11/06/23 05:49:09 - 3:41:21 - =================== Starting epoch 7 ... ===================
+INFO - 11/06/23 05:49:09 - 3:41:22 -    1100 -    4.20 sent/s -   342.62 words/s - XE-AE:  5.2354 || XE-BT:  5.2018 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  287.99s (37.81%)
+INFO - 11/06/23 05:53:55 - 3:46:07 -    1150 -   11.21 sent/s -   924.39 words/s - XE-AE:  5.2148 || XE-BT:  5.2160 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  230.10s (80.63%)
+INFO - 11/06/23 05:59:36 - 3:51:49 -    1200 -    9.38 sent/s -   734.47 words/s - XE-AE:  5.1190 || XE-BT:  5.1438 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  281.43s (82.47%)
+INFO - 11/06/23 06:05:10 - 3:57:23 -    1250 -    9.57 sent/s -   767.05 words/s - XE-AE:  5.1251 || XE-BT:  5.0954 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  273.52s (81.79%)
+INFO - 11/06/23 06:06:03 - 3:58:16 - ====================== End of epoch 7 ======================
+INFO - 11/06/23 06:06:03 - 3:58:16 - Evaluating sentences using pretrained classifiers (valid) ...
+INFO - 11/06/23 06:09:52 - 4:02:05 - BLEU - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 06:09:52 - 4:02:05 - BLEU - valid - binary_sentiment -         -1 ->       0.59 |       0.74 |       0.67
+INFO - 11/06/23 06:09:56 - 4:02:09 - BLEU - valid - binary_sentiment -          1 ->       0.55 |       0.82 |       0.69
+INFO - 11/06/23 06:09:56 - 4:02:09 - BLEU - valid - binary_sentiment: 0.675
+INFO - 11/06/23 06:09:56 - 4:02:09 - BLEU - valid: 0.675
+INFO - 11/06/23 06:09:56 - 4:02:09 - Accu - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 06:09:56 - 4:02:09 - Accu - valid - binary_sentiment -         -1 ->      83.91 |      70.30 |      77.11
+INFO - 11/06/23 06:09:56 - 4:02:09 - Accu - valid - binary_sentiment -          1 ->      98.48 |      97.53 |      98.01
+INFO - 11/06/23 06:09:56 - 4:02:09 - Accu - valid - binary_sentiment: 87.556
+INFO - 11/06/23 06:09:56 - 4:02:09 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 06:09:56 - 4:02:09 - [[[ 829  159]
+                                       [  15  973]]
+                                     
+                                      [[2706 1143]
+                                       [  95 3754]]]
+INFO - 11/06/23 06:09:56 - 4:02:09 - Accu - valid: 87.556
+INFO - 11/06/23 06:09:56 - 4:02:09 - Evaluating sentences using pretrained classifiers (test) ...
+INFO - 11/06/23 06:12:56 - 4:05:09 - BLEU -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 06:12:56 - 4:05:09 - BLEU -  test - binary_sentiment -         -1 ->       0.55 |       0.62 |       0.58
+INFO - 11/06/23 06:12:59 - 4:05:12 - BLEU -  test - binary_sentiment -          1 ->       0.54 |       0.79 |       0.67
+INFO - 11/06/23 06:12:59 - 4:05:12 - BLEU -  test - binary_sentiment: 0.625
+INFO - 11/06/23 06:12:59 - 4:05:12 - BLEU -  test: 0.625
+INFO - 11/06/23 06:12:59 - 4:05:12 - Accu -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 06:12:59 - 4:05:12 - Accu -  test - binary_sentiment -         -1 ->      80.93 |      70.38 |      75.65
+INFO - 11/06/23 06:12:59 - 4:05:12 - Accu -  test - binary_sentiment -          1 ->      97.98 |      97.27 |      97.62
+INFO - 11/06/23 06:12:59 - 4:05:12 - Accu -  test - binary_sentiment: 86.639
+INFO - 11/06/23 06:12:59 - 4:05:12 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 06:12:59 - 4:05:12 - [[[ 802  189]
+                                       [  20  971]]
+                                     
+                                      [[2704 1138]
+                                       [ 105 3737]]]
+INFO - 11/06/23 06:12:59 - 4:05:12 - Accu -  test: 86.639
+INFO - 11/06/23 06:12:59 - 4:05:12 - __log__:{"epoch": 7, "self_bleu_valid_binary_sentiment_-1_-1": 0.59, "self_bleu_valid_binary_sentiment_-1_1": 0.74, "self_bleu_valid_binary_sentiment_-1": 0.665, "self_bleu_valid_binary_sentiment_1_-1": 0.55, "self_bleu_valid_binary_sentiment_1_1": 0.82, "self_bleu_valid_binary_sentiment_1": 0.685, "self_bleu_valid_binary_sentiment": 0.675, "self_bleu_valid": 0.675, "ftt_clf_valid_binary_sentiment_-1_-1": 83.90688259109312, "ftt_clf_valid_binary_sentiment_1_-1": 70.30397505845674, "ftt_clf_valid_binary_sentiment_-1": 77.10542882477493, "ftt_clf_valid_binary_sentiment_-1_1": 98.48178137651821, "ftt_clf_valid_binary_sentiment_1_1": 97.53182644842816, "ftt_clf_valid_binary_sentiment_1": 98.00680391247319, "ftt_clf_valid_binary_sentiment": 87.55611636862406, "ftt_clf_valid": 87.55611636862406, "self_bleu_test_binary_sentiment_-1_-1": 0.55, "self_bleu_test_binary_sentiment_-1_1": 0.62, "self_bleu_test_binary_sentiment_-1": 0.585, "self_bleu_test_binary_sentiment_1_-1": 0.54, "self_bleu_test_binary_sentiment_1_1": 0.79, "self_bleu_test_binary_sentiment_1": 0.665, "self_bleu_test_binary_sentiment": 0.625, "self_bleu_test": 0.625, "ftt_clf_test_binary_sentiment_-1_-1": 80.92835519677094, "ftt_clf_test_binary_sentiment_1_-1": 70.38001041124414, "ftt_clf_test_binary_sentiment_-1": 75.65418280400755, "ftt_clf_test_binary_sentiment_-1_1": 97.98183652875883, "ftt_clf_test_binary_sentiment_1_1": 97.26704841228526, "ftt_clf_test_binary_sentiment_1": 97.62444247052204, "ftt_clf_test_binary_sentiment": 86.6393126372648, "ftt_clf_test": 86.6393126372648}
+INFO - 11/06/23 06:12:59 - 4:05:12 - Saving checkpoint to models/style_transfer/test/rpenory3r6/checkpoint.pth ...
+INFO - 11/06/23 06:13:03 - 4:05:16 - Test: Parameters are shared correctly.
+INFO - 11/06/23 06:13:03 - 4:05:16 - =================== Starting epoch 8 ... ===================
+INFO - 11/06/23 06:17:00 - 4:09:13 -    1300 -    4.51 sent/s -   363.72 words/s - XE-AE:  5.0773 || XE-BT:  5.1110 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  233.29s (32.85%)
+INFO - 11/06/23 06:22:30 - 4:14:43 -    1350 -    9.71 sent/s -   771.39 words/s - XE-AE:  5.0516 || XE-BT:  5.0515 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  271.66s (82.39%)
+INFO - 11/06/23 06:28:22 - 4:20:35 -    1400 -    9.10 sent/s -   723.74 words/s - XE-AE:  5.0505 || XE-BT:  5.0503 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  283.02s (80.49%)
+INFO - 11/06/23 06:30:08 - 4:22:21 - ====================== End of epoch 8 ======================
+INFO - 11/06/23 06:30:08 - 4:22:21 - Evaluating sentences using pretrained classifiers (valid) ...
+INFO - 11/06/23 06:33:37 - 4:25:50 - BLEU - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 06:33:37 - 4:25:50 - BLEU - valid - binary_sentiment -         -1 ->       0.64 |       0.61 |       0.62
+INFO - 11/06/23 06:33:41 - 4:25:54 - BLEU - valid - binary_sentiment -          1 ->       0.65 |       0.85 |       0.75
+INFO - 11/06/23 06:33:41 - 4:25:54 - BLEU - valid - binary_sentiment: 0.688
+INFO - 11/06/23 06:33:41 - 4:25:54 - BLEU - valid: 0.688
+INFO - 11/06/23 06:33:41 - 4:25:54 - Accu - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 06:33:41 - 4:25:54 - Accu - valid - binary_sentiment -         -1 ->       0.00 |       0.00 |       0.00
+INFO - 11/06/23 06:33:41 - 4:25:54 - Accu - valid - binary_sentiment -          1 ->     100.00 |     100.00 |     100.00
+INFO - 11/06/23 06:33:41 - 4:25:54 - Accu - valid - binary_sentiment: 50.000
+INFO - 11/06/23 06:33:41 - 4:25:54 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 06:33:41 - 4:25:54 - [[[   0  988]
+                                       [   0  988]]
+                                     
+                                      [[   0 3849]
+                                       [   0 3849]]]
+INFO - 11/06/23 06:33:41 - 4:25:54 - Accu - valid: 50.000
+INFO - 11/06/23 06:33:41 - 4:25:54 - Evaluating sentences using pretrained classifiers (test) ...
+INFO - 11/06/23 06:36:31 - 4:28:43 - BLEU -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 06:36:31 - 4:28:43 - BLEU -  test - binary_sentiment -         -1 ->       0.57 |       0.56 |       0.56
+INFO - 11/06/23 06:36:35 - 4:28:47 - BLEU -  test - binary_sentiment -          1 ->       0.66 |       0.82 |       0.74
+INFO - 11/06/23 06:36:35 - 4:28:47 - BLEU -  test - binary_sentiment: 0.652
+INFO - 11/06/23 06:36:35 - 4:28:47 - BLEU -  test: 0.652
+INFO - 11/06/23 06:36:35 - 4:28:47 - Accu -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 06:36:35 - 4:28:47 - Accu -  test - binary_sentiment -         -1 ->       0.00 |       0.00 |       0.00
+INFO - 11/06/23 06:36:35 - 4:28:47 - Accu -  test - binary_sentiment -          1 ->     100.00 |     100.00 |     100.00
+INFO - 11/06/23 06:36:35 - 4:28:47 - Accu -  test - binary_sentiment: 50.000
+INFO - 11/06/23 06:36:35 - 4:28:47 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 06:36:35 - 4:28:47 - [[[   0  991]
+                                       [   0  991]]
+                                     
+                                      [[   0 3842]
+                                       [   0 3842]]]
+INFO - 11/06/23 06:36:35 - 4:28:47 - Accu -  test: 50.000
+INFO - 11/06/23 06:36:35 - 4:28:47 - __log__:{"epoch": 8, "self_bleu_valid_binary_sentiment_-1_-1": 0.64, "self_bleu_valid_binary_sentiment_-1_1": 0.61, "self_bleu_valid_binary_sentiment_-1": 0.625, "self_bleu_valid_binary_sentiment_1_-1": 0.65, "self_bleu_valid_binary_sentiment_1_1": 0.85, "self_bleu_valid_binary_sentiment_1": 0.75, "self_bleu_valid_binary_sentiment": 0.6875, "self_bleu_valid": 0.6875, "ftt_clf_valid_binary_sentiment_-1_-1": 0.0, "ftt_clf_valid_binary_sentiment_1_-1": 0.0, "ftt_clf_valid_binary_sentiment_-1": 0.0, "ftt_clf_valid_binary_sentiment_-1_1": 100.0, "ftt_clf_valid_binary_sentiment_1_1": 100.0, "ftt_clf_valid_binary_sentiment_1": 100.0, "ftt_clf_valid_binary_sentiment": 50.0, "ftt_clf_valid": 50.0, "self_bleu_test_binary_sentiment_-1_-1": 0.57, "self_bleu_test_binary_sentiment_-1_1": 0.56, "self_bleu_test_binary_sentiment_-1": 0.565, "self_bleu_test_binary_sentiment_1_-1": 0.66, "self_bleu_test_binary_sentiment_1_1": 0.82, "self_bleu_test_binary_sentiment_1": 0.74, "self_bleu_test_binary_sentiment": 0.6525, "self_bleu_test": 0.6525, "ftt_clf_test_binary_sentiment_-1_-1": 0.0, "ftt_clf_test_binary_sentiment_1_-1": 0.0, "ftt_clf_test_binary_sentiment_-1": 0.0, "ftt_clf_test_binary_sentiment_-1_1": 100.0, "ftt_clf_test_binary_sentiment_1_1": 100.0, "ftt_clf_test_binary_sentiment_1": 100.0, "ftt_clf_test_binary_sentiment": 50.0, "ftt_clf_test": 50.0}
+INFO - 11/06/23 06:36:35 - 4:28:47 - Saving checkpoint to models/style_transfer/test/rpenory3r6/checkpoint.pth ...
+INFO - 11/06/23 06:36:37 - 4:28:49 - Test: Parameters are shared correctly.
+INFO - 11/06/23 06:36:37 - 4:28:49 - =================== Starting epoch 9 ... ===================
+INFO - 11/06/23 06:40:05 - 4:32:18 -    1450 -    4.55 sent/s -   367.17 words/s - XE-AE:  5.0424 || XE-BT:  5.0328 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  237.86s (33.83%)
+INFO - 11/06/23 06:45:50 - 4:38:03 -    1500 -    9.27 sent/s -   739.53 words/s - XE-AE:  4.9926 || XE-BT:  5.0040 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  258.12s (74.79%)
+INFO - 11/06/23 06:51:35 - 4:43:47 -    1550 -    9.28 sent/s -   759.55 words/s - XE-AE:  4.9760 || XE-BT:  4.9604 - LR enc=3.0000e-04,dec=3.0000e-04 - Sentences generation time:  268.56s (77.92%)
+INFO - 11/06/23 06:54:13 - 4:46:26 - ====================== End of epoch 9 ======================
+INFO - 11/06/23 06:54:13 - 4:46:26 - Evaluating sentences using pretrained classifiers (valid) ...
+INFO - 11/06/23 06:57:54 - 4:50:06 - BLEU - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 06:57:54 - 4:50:06 - BLEU - valid - binary_sentiment -         -1 ->       0.69 |       0.75 |       0.72
+INFO - 11/06/23 06:57:57 - 4:50:10 - BLEU - valid - binary_sentiment -          1 ->       0.69 |       0.90 |       0.79
+INFO - 11/06/23 06:57:57 - 4:50:10 - BLEU - valid - binary_sentiment: 0.757
+INFO - 11/06/23 06:57:57 - 4:50:10 - BLEU - valid: 0.757
+INFO - 11/06/23 06:57:57 - 4:50:10 - Accu - valid - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 06:57:57 - 4:50:10 - Accu - valid - binary_sentiment -         -1 ->       0.00 |       0.00 |       0.00
+INFO - 11/06/23 06:57:57 - 4:50:10 - Accu - valid - binary_sentiment -          1 ->     100.00 |     100.00 |     100.00
+INFO - 11/06/23 06:57:57 - 4:50:10 - Accu - valid - binary_sentiment: 50.000
+INFO - 11/06/23 06:57:57 - 4:50:10 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 06:57:57 - 4:50:10 - [[[   0  988]
+                                       [   0  988]]
+                                     
+                                      [[   0 3849]
+                                       [   0 3849]]]
+INFO - 11/06/23 06:57:57 - 4:50:10 - Accu - valid: 50.000
+INFO - 11/06/23 06:57:57 - 4:50:10 - Evaluating sentences using pretrained classifiers (test) ...
+INFO - 11/06/23 07:00:52 - 4:53:05 - BLEU -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 07:00:52 - 4:53:05 - BLEU -  test - binary_sentiment -         -1 ->       0.62 |       0.67 |       0.65
+INFO - 11/06/23 07:00:56 - 4:53:09 - BLEU -  test - binary_sentiment -          1 ->       0.71 |       0.93 |       0.82
+INFO - 11/06/23 07:00:56 - 4:53:09 - BLEU -  test - binary_sentiment: 0.733
+INFO - 11/06/23 07:00:56 - 4:53:09 - BLEU -  test: 0.733
+INFO - 11/06/23 07:00:56 - 4:53:09 - Accu -  test - binary_sentiment -            ->         -1 |          1 |      Total
+INFO - 11/06/23 07:00:56 - 4:53:09 - Accu -  test - binary_sentiment -         -1 ->       0.00 |       0.00 |       0.00
+INFO - 11/06/23 07:00:56 - 4:53:09 - Accu -  test - binary_sentiment -          1 ->     100.00 |     100.00 |     100.00
+INFO - 11/06/23 07:00:56 - 4:53:09 - Accu -  test - binary_sentiment: 50.000
+INFO - 11/06/23 07:00:56 - 4:53:09 - Confusion matrix for binary_sentiment:
+INFO - 11/06/23 07:00:56 - 4:53:09 - [[[   0  991]
+                                       [   0  991]]
+                                     
+                                      [[   0 3842]
+                                       [   0 3842]]]
+INFO - 11/06/23 07:00:56 - 4:53:09 - Accu -  test: 50.000
+INFO - 11/06/23 07:00:56 - 4:53:09 - __log__:{"epoch": 9, "self_bleu_valid_binary_sentiment_-1_-1": 0.69, "self_bleu_valid_binary_sentiment_-1_1": 0.75, "self_bleu_valid_binary_sentiment_-1": 0.72, "self_bleu_valid_binary_sentiment_1_-1": 0.69, "self_bleu_valid_binary_sentiment_1_1": 0.9, "self_bleu_valid_binary_sentiment_1": 0.7949999999999999, "self_bleu_valid_binary_sentiment": 0.7575, "self_bleu_valid": 0.7575, "ftt_clf_valid_binary_sentiment_-1_-1": 0.0, "ftt_clf_valid_binary_sentiment_1_-1": 0.0, "ftt_clf_valid_binary_sentiment_-1": 0.0, "ftt_clf_valid_binary_sentiment_-1_1": 100.0, "ftt_clf_valid_binary_sentiment_1_1": 100.0, "ftt_clf_valid_binary_sentiment_1": 100.0, "ftt_clf_valid_binary_sentiment": 50.0, "ftt_clf_valid": 50.0, "self_bleu_test_binary_sentiment_-1_-1": 0.62, "self_bleu_test_binary_sentiment_-1_1": 0.67, "self_bleu_test_binary_sentiment_-1": 0.645, "self_bleu_test_binary_sentiment_1_-1": 0.71, "self_bleu_test_binary_sentiment_1_1": 0.93, "self_bleu_test_binary_sentiment_1": 0.8200000000000001, "self_bleu_test_binary_sentiment": 0.7325, "self_bleu_test": 0.7325, "ftt_clf_test_binary_sentiment_-1_-1": 0.0, "ftt_clf_test_binary_sentiment_1_-1": 0.0, "ftt_clf_test_binary_sentiment_-1": 0.0, "ftt_clf_test_binary_sentiment_-1_1": 100.0, "ftt_clf_test_binary_sentiment_1_1": 100.0, "ftt_clf_test_binary_sentiment_1": 100.0, "ftt_clf_test_binary_sentiment": 50.0, "ftt_clf_test": 50.0}
+INFO - 11/06/23 07:00:56 - 4:53:09 - Saving checkpoint to models/style_transfer/test/rpenory3r6/checkpoint.pth ...
+INFO - 11/06/23 07:00:58 - 4:53:11 - Test: Parameters are shared correctly.
