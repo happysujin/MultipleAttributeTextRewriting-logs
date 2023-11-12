@@ -1,0 +1,39 @@
+file_path = "../test_dataset/pasukun.txt"
+
+# 파일 열기 (읽기 모드: 'r')
+num=0
+with open(file_path, 'r', encoding='utf-8') as file:
+    # 파일의 한 줄 읽어오기
+    while True:
+        line = file.readline()
+        num = num+1
+        # print(num)
+        # 파일 끝에 도달하면 루프 종료
+        if not line:
+            break
+        
+        # 읽어온 한 줄이 공백일 때 (단문 구분)
+        if len(line.strip()) <= 1:
+            continue
+
+        # 단문의 처음이 이름이라면 (5글자 안)
+        if len(line) <= 5:
+            c_name=line.strip()
+            with open(c_name, 'a', encoding='utf-8') as name:
+                while True:
+                    line = file.readline()
+                    num = num+1
+                    # 파일 끝에 도달하면 루프 종료
+                    if not line:
+                        break
+
+                    if line.startswith('('):
+                        continue
+
+                    # 읽어온 한 줄이 공백일 때 (단문 구분)
+                    if len(line.strip()) <= 1:
+                        break
+
+                    name.write(line)
+
+        # 읽어온 한 줄 출력 또는 활용
