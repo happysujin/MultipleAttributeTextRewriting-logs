@@ -1,0 +1,34 @@
+{
+    "remotePath": "/root/TST/data",
+    "host": "172.28.102.108",
+    "username": "root",
+    "password": "keroro2424.",
+    "port": 22,
+    "secure": false,
+    "protocol": "sftp",
+    "uploadOnSave": false,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store",
+        "fastText",
+        "fastTextInstall",
+        "mosesdecoder",
+        "mosesdecoder2",
+        "fastBPE",
+        "models",
+        "dataset"
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [
+            ""
+        ],
+        "path": ""
+    }
+}
