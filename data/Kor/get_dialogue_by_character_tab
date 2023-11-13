@@ -5,8 +5,8 @@ def remove_parentheses(sentence):
     # 정규 표현식을 사용하여 괄호 안의 내용을 제거
     return re.sub(r'\([^)]*\)', '', sentence)
 
-file_path = "../test_dataset/taxi.txt"
-name_directory_path = "taxi/"
+file_path = "../test_dataset/gansin.txt"
+name_directory_path = "gansin/"
 
 if not os.path.exists(name_directory_path):
     os.makedirs(name_directory_path)
@@ -19,7 +19,7 @@ with open(file_path, 'r', encoding='utf-8') as file:
     while True:
         line = file.readline()
         num = num+1
-        # print(num)
+        print(num)
         # print(num)
         # 파일 끝에 도달하면 루프 종료
         if not line:
@@ -29,10 +29,11 @@ with open(file_path, 'r', encoding='utf-8') as file:
         if '\t' in line:
             character, dialogue = map(str.strip, line.split('\t', 1))
             c_name = character.strip()
-            if len(c_name) < 1:
-                continue
+            if len(c_name) >= 1:
+                if '/' in line:
+                    c_name = c_name.split('/')[0]
+                name_path = os.path.join(name_directory_path, c_name)
 
-            name_path = os.path.join(name_directory_path, c_name)
             with open(name_path, 'a', encoding='utf-8') as name:
                 dialogue = remove_parentheses(dialogue)
                 name.write(f"{dialogue}\n")
